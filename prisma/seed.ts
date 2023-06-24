@@ -10,6 +10,7 @@ const departments = [
   { name: "เลขา" },
   { name: "คอมพิวเตอร์กราฟฟิก" },
   { name: "วิจิตศิลป์" },
+  { name: "คหกรรม" },
 ];
 
 const user = [
