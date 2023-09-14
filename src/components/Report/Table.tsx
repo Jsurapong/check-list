@@ -62,7 +62,11 @@ const UserTable: React.FC<{
       const check_3 = getCheck(item.id, 3);
       const check_4 = getCheck(item.id, 4);
 
-      const summary = !!(check_1 && check_2 && check_3 && check_4);
+      const countPassCheck = [check_1, check_2, check_3, check_4].filter(
+        (item) => item
+      );
+
+      const summary = countPassCheck.length >= 3;
 
       return {
         index: index + 1,
