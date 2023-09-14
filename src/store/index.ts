@@ -7,6 +7,7 @@ import { checkRoomApi } from "@/app/check-list/service";
 import { reportApi } from "@/app/service";
 //
 
+//
 export function makeStore() {
   return configureStore({
     reducer: {
