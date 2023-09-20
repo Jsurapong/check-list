@@ -191,7 +191,9 @@ function downloadCSVFile(csv_data: string) {
   // Create CSV file object and feed our
   // csv_data into it
 
-  const CSVFile = new Blob([csv_data], { type: "text/csv" });
+  const CSVFile = new Blob(["\uFEFF" + csv_data], {
+    type: "text/csv; charset=utf-8",
+  });
 
   // Create to temporary link to initiate
   // download process
