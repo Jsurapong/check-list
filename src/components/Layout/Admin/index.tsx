@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Row, Col } from "antd";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
@@ -72,12 +72,13 @@ const LayoutAdmin: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       >
         <div
           style={{
-            height: "32px",
-            margin: "16px",
-            // background: "rgba(255,255,255,.2)",
+            height: "120px",
             borderRadius: "6px",
           }}
-        />
+        >
+          <img src="/logo.png" width={"100%"} />
+        </div>
+
         <Menu
           theme="dark"
           mode="inline"

@@ -6,6 +6,7 @@ import { getServerSession } from "next-auth/next";
 
 import DashboardStudent from "@/components/Home/DashboardStudent";
 import DashboardTeacher from "@/components/Home/DashboardTeacher";
+import LayoutAdmin from "@/components/Layout/Admin";
 
 export default async function Page() {
   await authServer([Role.Admin, Role.Student, Role.TeacherL1, Role.TeacherL2]);
@@ -17,8 +18,16 @@ export default async function Page() {
     session?.user?.type === Role.TeacherL1 ||
     session?.user?.type === Role.TeacherL2
   ) {
-    return <DashboardTeacher />;
+    return (
+      <LayoutAdmin>
+        <DashboardTeacher />
+      </LayoutAdmin>
+    );
   }
 
-  return <DashboardStudent />;
+  return (
+    <LayoutAdmin>
+      <DashboardStudent />
+    </LayoutAdmin>
+  );
 }

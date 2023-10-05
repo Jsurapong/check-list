@@ -27,9 +27,7 @@ export default function RootLayout({
         <RootStyleRegistry>
           <NextAuthProvider>
             <StoreProvider>
-              <AntDProvider>
-                <LayoutAdmin>{children}</LayoutAdmin>
-              </AntDProvider>
+              <AntDProvider>{children}</AntDProvider>
             </StoreProvider>
           </NextAuthProvider>
         </RootStyleRegistry>

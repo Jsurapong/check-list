@@ -3,6 +3,9 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import type { NextAuthOptions } from "next-auth";
 
 export const authOptions: NextAuthOptions = {
+  pages: {
+    signIn: "/signin",
+  },
   providers: [
     CredentialsProvider({
       // The name to display on the sign in form (e.g. "Sign in with...")
@@ -50,6 +53,10 @@ export const authOptions: NextAuthOptions = {
     async session({ session, token }) {
       session.user = token as any;
       return session;
+    },
+    async redirect({ url, baseUrl }) {
+      console.log({ baseUrl });
+      return baseUrl;
     },
   },
 };
