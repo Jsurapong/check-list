@@ -10,6 +10,7 @@ import {
 } from "../components/Provider";
 // import AppBar from "@/components/AppBar";
 import LayoutAdmin from "@/components/Layout/Admin";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Create Next App",
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="th">
       <body>
+        <Analytics />
         <RootStyleRegistry>
           <NextAuthProvider>
             <StoreProvider>
